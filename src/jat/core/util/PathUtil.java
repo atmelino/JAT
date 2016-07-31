@@ -30,6 +30,8 @@ import java.net.URL;
  * 
  *         Note: This relies on the root of the project being named "jat" !!!
  * 
+ *         2016-07-31: Eclipse puts source files into src/jat and compiled files
+ *         into bin/jat. Change DE045Path accordingly.
  */
 public class PathUtil {
 	boolean debug = false;
@@ -48,8 +50,10 @@ public class PathUtil {
 		if (debug)
 			System.out.println("<PathUtil > constructor ");
 		root_path = find_root();
-		data_path = root_path + "data/";
-		DE405Path = root_path + "data/core/ephemeris/DE405data/";
+		int length = root_path.length();
+		String root_path2 = root_path.substring(0, length - 8);
+		data_path = root_path2 + "data/";
+		DE405Path = root_path2 + "data/core/ephemeris/DE405data/";
 
 	}
 
@@ -61,8 +65,14 @@ public class PathUtil {
 		this.messages = messages;
 		// current_path = find_current_path(myapplet);
 		root_path = find_root(myapplet);
-		data_path = root_path + "data/";
-		DE405Path = root_path + "data/core/ephemeris/DE405data/";
+
+		int length = root_path.length();
+		String root_path2 = root_path.substring(0, length - 8);
+		data_path = root_path2 + "data/";
+		DE405Path = root_path2 + "data/core/ephemeris/DE405data/";
+
+		//data_path = root_path + "data/";
+		//DE405Path = root_path + "data/core/ephemeris/DE405data/";
 
 		if (messages != null) {
 			messages.addln("[PathUtil root path] " + root_path);
@@ -78,8 +88,13 @@ public class PathUtil {
 
 		// current_path = find_current_path(myapplet);
 		root_path = find_root(myapplet);
-		data_path = root_path + "data/";
-		DE405Path = root_path + "data/core/ephemeris/DE405data/";
+		//data_path = root_path + "data/";
+		//DE405Path = root_path + "data/core/ephemeris/DE405data/";
+
+		int length = root_path.length();
+		String root_path2 = root_path.substring(0, length - 8);
+		data_path = root_path2 + "data/";
+		DE405Path = root_path2 + "data/core/ephemeris/DE405data/";
 
 		// if (debug)
 		// System.out.println("[PathUtil current_path] " + current_path);
@@ -97,8 +112,9 @@ public class PathUtil {
 
 		URL pathURL = myapplet.getCodeBase();
 		String pathName = pathURL.toExternalForm();
-		//System.out.println("[PathUtil] getCodeBase " + myapplet.getCodeBase());
-		//System.out.println("[PathUtil] getCodeBase " + pathName);
+		// System.out.println("[PathUtil] getCodeBase " +
+		// myapplet.getCodeBase());
+		// System.out.println("[PathUtil] getCodeBase " + pathName);
 
 		// go forward in the directory tree until you find "jat"
 		String[] numberSplit = pathName.split("/");
@@ -180,5 +196,12 @@ public class PathUtil {
 		}
 	}
 
-}
+	public void print() {
 
+		System.out.println("[PathUtil]");
+		System.out.println("root_path=" + root_path);
+		System.out.println("data_path=" + data_path);
+		System.out.println("DE405Path=" + DE405Path);
+
+	}
+}

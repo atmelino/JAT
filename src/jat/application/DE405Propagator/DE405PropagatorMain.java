@@ -56,6 +56,7 @@ public class DE405PropagatorMain extends JApplet {
 		dpGlobals = new DE405PropagatorGlobals();
 
 		PathUtil path = new PathUtil(this);
+		path.print();
 		dpGlobals.Eph = new DE405Plus(path);
 		dpGlobals.Eph.setUnitsMaster(dpGlobals.uc);
 		dpGlobals.uc.addUser(dpGlobals.Eph.getUnits());

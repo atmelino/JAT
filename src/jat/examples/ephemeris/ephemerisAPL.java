@@ -20,6 +20,7 @@ package jat.examples.ephemeris;
 import jat.core.ephemeris.DE405Body.body;
 import jat.core.ephemeris.DE405Frame.frame;
 import jat.core.ephemeris.DE405Plus;
+import jat.core.util.PathUtil;
 import jat.coreNOSA.math.MatrixVector.data.VectorN;
 import jat.coreNOSA.spacetime.Time;
 
@@ -30,7 +31,12 @@ public class ephemerisAPL
     public static void main (String argv[])
     {
         Time mytime=new Time(2002, 2, 17, 12, 0, 0);
-		DE405Plus ephem = new DE405Plus();
+        
+		PathUtil path = new PathUtil();
+		path.print();
+		DE405Plus ephem = new DE405Plus(path);
+
+		//DE405Plus ephem = new DE405Plus();
         VectorN rv;
 		try {
 			ephem.setFrame(frame.ICRF);
