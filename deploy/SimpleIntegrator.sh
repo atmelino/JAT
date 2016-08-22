@@ -1,5 +1,5 @@
 
-java -cp ../dist/jatcore.jar:../dist/jatexamples.jar:../lib/plot.jar  jat.examples.IntegratorExample.SimpleIntegrator
+java -cp ../dist/jatcore.jar:../dist/jatexamplesNOSA.jar:../lib/plot.jar  jat.examplesNOSA.IntegratorExample.SimpleIntegrator
 
 echo press enter
 
