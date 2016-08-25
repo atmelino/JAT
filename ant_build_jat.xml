@@ -91,8 +91,12 @@
 		<zip destfile="zip/jat.zip" basedir="${folder-to-zip}" includes="**/dist/**,**/lib/**,**/deploy/**,**/data/core/ephemeris/**,**/data/core/astronomy/**,**/data/jat3D/images_hires/**" />
 	</target>
 
+	<target name="zip_bin">
+		<zip destfile="zip/jat_bin.zip" basedir="${folder-to-zip}" includes="**/bin/**,**/lib/**,**/deploy_bin/**,**/data/core/ephemeris/**,**/data/core/astronomy/**,**/data/jat3D/images_hires/**" />
+	</target>
 
-	<target name="main" depends="jatcore.jar, jat3D.jar, jatcoreNOSA.jar, jatapplication.jar, jatexamples.jar, jattests.jar, jatexamplesNOSA.jar, zip">
+
+	<target name="main" depends="jatcore.jar, jat3D.jar, jatcoreNOSA.jar, jatapplication.jar, jatexamples.jar, jattests.jar, jatexamplesNOSA.jar, zip, zip_bin">
 		<description>Main target</description>
 	</target>
 
