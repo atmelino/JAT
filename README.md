@@ -8,8 +8,12 @@ download the zip file jat_bin.zip
 
 extract the file
 
-make the file run.sh executable
+copy all files from deploy_bin to bin
 
+make the script file SimpleIntegrator.sh executable
+(or any other script file you want to run)
+
+run the script
 
 
 

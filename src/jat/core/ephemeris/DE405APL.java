@@ -141,8 +141,8 @@ public class DE405APL {
 
 	public DE405APL() {
 
-		path = new PathUtil();
-		DE405_path = path.DE405Path;
+		//path = new PathUtil();
+		//DE405_path = path.DE405Path;
 		// System.out.println("[DE405APL 1 DE405_path] " + DE405_path);
 	}
 
